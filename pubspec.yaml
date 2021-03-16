@@ -1,18 +1,17 @@
 name: minio_dd
 description: A new Flutter package with minio.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/duanchanghe/minio_dd.git
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0"
 
 dependencies:
   meta: '>=1.0.0 <2.0.0'
   http: '>=0.0.1 <1.0.0'
   crypto: '>=2.0.0 <3.0.0'
   convert: '>=2.0.0 <3.0.0'
-  xml: '>=3.2.5 <4.0.0'
+  xml: '>=3.2.5 <5.0.0'
   buffer: '>=1.0.0 <2.0.0'
   intl: '>=0.0.1 <1.0.0'
   mime: '>=0.0.1 <1.0.0'
