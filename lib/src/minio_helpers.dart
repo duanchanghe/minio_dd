@@ -203,7 +203,7 @@ Future<void> validateStreamed(
 }) async {
   if (streamedResponse.statusCode >= 400) {
     final response = await Response.fromStream(streamedResponse);
-    final body = xml.XmlDocument.parse(response.body);
+    final body = xml.parse(response.body);
     final error = Error.fromXml(body.rootElement);
     throw MinioS3Error(error.message, error, response);
   }
@@ -223,7 +223,7 @@ void validate(Response response, {int expect}) {
     if (response.body == null || response.body.isEmpty) {
       error = Error(response.reasonPhrase, null, response.reasonPhrase, null);
     } else {
-      final body = xml.XmlDocument.parse(response.body);
+      final body = xml.parse(response.body);
       error = Error.fromXml(body.rootElement);
     }
 

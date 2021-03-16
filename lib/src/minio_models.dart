@@ -32,7 +32,7 @@ class CompleteMultipartUpload {
     final builder = XmlBuilder();
     builder.element('CompleteMultipartUpload',
         nest: parts.map((p) => p.toXml()));
-    return builder.buildDocument();
+    return builder.build();
   }
 
   /// Array of CompletedPart data types.
