@@ -11,7 +11,7 @@ extension MinioX on Minio {
     String bucket,
     String object,
     String filePath, [
-    Map<String, String> metadata,
+    Map<String, String>? metadata,
   ]) async {
     MinioInvalidBucketNameError.check(bucket);
     MinioInvalidObjectNameError.check(object);
@@ -38,7 +38,7 @@ extension MinioX on Minio {
   }
 
   /// Downloads and saves the object as a file in the local filesystem.
-  Future<void> fGetObject(
+  Future<File> fGetObject(
     String bucket,
     String object,
     String filePath,

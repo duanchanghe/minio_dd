@@ -17,7 +17,7 @@ String signV4(
   final signedHeaders = getSignedHeaders(request.headers.keys);
   final hashedPayload = request.headers['x-amz-content-sha256'];
   final canonicalRequest =
-      getCanonicalRequest(request, signedHeaders, hashedPayload);
+      getCanonicalRequest(request, signedHeaders, hashedPayload!);
   final stringToSign = getStringToSign(canonicalRequest, requestDate, region);
   final signingKey = getSigningKey(requestDate, region, minio.secretKey);
   final credential = getCredential(minio.accessKey, region, requestDate);
@@ -54,7 +54,7 @@ String getCanonicalRequest(
   final requestQuery = queryKeys.map((key) {
     final value = request.url.queryParameters[key];
     final hasValue = value != null;
-    final valuePart = hasValue ? Uri.encodeQueryComponent(value) : '';
+    final valuePart = hasValue ? Uri.encodeQueryComponent(value!) : '';
     return Uri.encodeQueryComponent(key) + '=' + valuePart;
   }).join('&');
 
@@ -126,7 +126,7 @@ String presignSignatureV4(
   requestQuery['X-Amz-Expires'] = expires.toString();
   requestQuery['X-Amz-SignedHeaders'] = signedHeaders.join(';').toLowerCase();
   if (minio.sessionToken != null) {
-    requestQuery['X-Amz-Security-Token'] = minio.sessionToken;
+    requestQuery['X-Amz-Security-Token'] = minio.sessionToken!;
   }
 
   request = request.replace(

@@ -2,5 +2,6 @@
 ## [0.0.2] - TODO: update packages
 ## [0.0.3] - TODO: update packages
 ## [0.0.4] - TODO: update packages
+## [0.0.5] - TODO: null safety
 
 * TODO: Describe initial release.

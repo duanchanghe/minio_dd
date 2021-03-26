@@ -87,6 +87,6 @@ class MinioInvalidXMLError extends MinioError {
 class MinioS3Error extends MinioError {
   MinioS3Error(String message, [this.error, this.response]) : super(message);
 
-  Error error;
-  Response response;
+  Error? error;
+  Response? response;
 }
