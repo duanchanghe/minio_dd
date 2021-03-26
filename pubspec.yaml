@@ -1,6 +1,6 @@
 name: minio_dd
 description: A new Flutter package with minio.
-version: 0.0.5
+version: 0.1.0
 homepage: https://github.com/duanchanghe/minio_dd.git
 
 environment:
